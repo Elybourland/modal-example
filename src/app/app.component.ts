@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { GreetingsComponent } from './greetings/greetings.component';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'modal-example';
+
+  constructor(private matDialog: MatDialog) {
+
+  }
+
+  // onOpenDialogClick() {
+  //   this.matDialog.open(GreetingsComponent);
+  // }
+
+  ngOnInit() {
+    this.matDialog.open(GreetingsComponent);
+  }
+
 }
