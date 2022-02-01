@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-greetings',
   templateUrl: './greetings.component.html',
   styleUrls: ['./greetings.component.css']
 })
-export class GreetingsComponent implements OnInit {
+export class GreetingsComponent {
 
-  constructor() { }
+  key: string = 'policy';
 
-  ngOnInit(): void {
+  onAccepted() {
+    localStorage.setItem(this.key, 'true');
   }
-
 }

@@ -9,16 +9,11 @@ import { GreetingsComponent } from './greetings/greetings.component';
 })
 export class AppComponent {
 
-  constructor(private matDialog: MatDialog) {
-
-  }
-
-  // onOpenDialogClick() {
-  //   this.matDialog.open(GreetingsComponent);
-  // }
+  constructor(private matDialog: MatDialog) {}
 
   ngOnInit() {
-    this.matDialog.open(GreetingsComponent);
-  }
-
-}
+    if (localStorage.getItem('policy') !== 'true')
+        this.matDialog.open(GreetingsComponent);
+      }
+    }
+    
